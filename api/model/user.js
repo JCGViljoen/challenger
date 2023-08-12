@@ -37,7 +37,7 @@ class users{
                         msg:"The user has been updated:heart_eyes:"
                     })
                 })
-         }
+         }git 
          deleteUser(req,res){
             const query=`
             delete from users
