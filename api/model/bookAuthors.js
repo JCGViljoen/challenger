@@ -1,6 +1,6 @@
 // database bookauthor.
 
-class bookAuthor{
+class bookAuthors{
 
 }
-module.exports= bookAuthor
+module.exports= bookAuthors
