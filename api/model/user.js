@@ -88,8 +88,8 @@ class users {
         SELECT firstName, lastName,
         gender, userDOB, emailAdd, userPass,
         profileUrl
-        FROM Users
-        WHERE emailAdd = ${emailAdd};
+        FROM users
+        WHERE emailAdd = '${emailAdd}';
         `;
     db.query(query, async (err, result) => {
       if (err) throw err;

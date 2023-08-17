@@ -1,11 +1,15 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const {verifyAToken} = require("../middelware/Authentication")
 const routes = express.Router();
+
 //import all models objects
 const { users } = require("../model");
+
 // routes.get('^/$|/challenger',(req,res)=>{
 //     res.sendFile(patn.resolve(__dirname,'../static'))
 // })
+
 //=====user's router======
 routes.get("/users", (req, res) => {
   users.fetchUsers(req, res);
@@ -32,6 +36,11 @@ module.exports = {
   express,
   routes,
 };
+
+// =====Books router=====
+routes.get('/books',verifyAToken, (req, res) => {
+  books.fetchBooks(req, res);
+})
 
 
 
